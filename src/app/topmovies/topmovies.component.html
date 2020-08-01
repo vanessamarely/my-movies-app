@@ -1,0 +1,17 @@
+<header>
+    <h1>🎥Top Movies🎥</h1>
+  </header>
+  <section class="movies" *ngIf="list">
+    <div  class="movies__cards" *ngFor="let movie of list">
+      <div class="movies__cards__card">
+        <h1>{{ movie.title }}</h1>
+        <img [src]="movie.image"  [title]="movie.title" />
+        <p>Release date: {{ movie.release | date }}</p>
+        <p>{{ movie.description }}</p>
+      </div>
+    </div>
+  </section>
+  
+  <section *ngIf="!list">
+    no hay informacion
+  </section>
